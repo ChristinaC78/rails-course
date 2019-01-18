@@ -1,0 +1,6 @@
+
+        <a href="/questions/new">New</a>
+        <% @questions.each do |q| %>
+        <div>
+            <a href="questions/edit?id=<%= q.id %>"><% q.id %>/div>
+        <% end %>
