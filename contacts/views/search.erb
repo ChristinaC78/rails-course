@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <a href="/contacts/search">Contacts</a>
+          <div>
+            <form action="/search" method="post">
+            <input type="search" name="search" placeholder="First Name" <%= query = "%#{params[:query]}%" %> >
+            <input type="search" name="search" placeholder="Last Name" <%= query = "%#{params[:query]}%" %>>
+            <input type="submit" value="Search">
+            </form>
+          </div>
+    </body>
+</html>
