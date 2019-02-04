@@ -1,0 +1,14 @@
+<form action="/courses/<%= @course.id %>" method="post">
+        <div>
+        <input type="text" name="name" value="<%= @course.name %>" placeholder="Course Name">
+    </div>
+    <div>
+        <input type="text" name="location" value="<%= @course.location %>" placeholder="Location">
+    </div>
+    <div>
+        <textarea name="description"><%= @course.description %></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Save">
+    </div>
+</form>
