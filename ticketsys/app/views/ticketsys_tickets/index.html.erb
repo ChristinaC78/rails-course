@@ -1,7 +1,7 @@
 <% @tickets.each do |ticket| %>
 
     <div class= "row">
-        <div class="col-2">
+        <div class="col-md-4">
             <%= ticket.status %>
         </div>
     </div>
@@ -9,7 +9,7 @@
             <%= ticket.name %>
             <%= ticket.pcname %>
         </div>
-        <div class="col-2" >
+        <div class="col-3" >
             <% if ticket.status == 'submitted' %>
                 <%= link_to 'Assign', assign_path(ticket), method: :put, class: 'btn btn-sm btn-secondary' %>
             <% elsif ticket.status == 'assigned' %>
@@ -20,9 +20,10 @@
                 <%= link_to 'Complete', complete_path(ticket), method: :put, class: 'btn btn-sm btn-secondary' %>
             <% end %> 
         </div>
+        
         <% if ticket.status == 'assigned' %>
             <% ticket.ticket_issues.each do |ticket_issue| %>
-                 <div class="media mt-3">
+                 <div class="col-md-4">
                     <%= image_tag ticket_issue.issue.picture, height: 50, width: 50, class: 'mr-3' %>
                     <div class="media-body">
                         <h6>
@@ -32,4 +33,5 @@
                  </div>
             <% end %>
         <% end %>
+        </span>
 <% end %>

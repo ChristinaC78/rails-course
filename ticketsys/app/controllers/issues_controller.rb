@@ -1,9 +1,8 @@
 class IssuesController < ApplicationController
     before_action :authenticate_user!
-    load_and_authorize_resource
-    load_and_authorize_resource :only => [:new, :edit]
-    skip_authorize_resource :only => :index
-end
+    # load_and_authorize_resource
+    # load_and_authorize_resource :only => [:new, :edit]
+    # skip_authorize_resource :only => :index
    
     def index
         @issues = Issue.all
@@ -39,3 +38,4 @@ end
         issue = Issue.find(params[:id])
         issue
     end
+end

@@ -5,15 +5,15 @@
         <span class="border border-white">
     <div>
         <%= image_tag issue.picture, height: 100 %>
-        </div>
+    </div>
         <div>
            <%= issue.name %> 
         </div>
         <div>
             <p><%= issue.description %></p>
-        </div>
+       </div>
         </span>
-        </div>
+</div>
      <%= link_to 'Edit', edit_issue_path(issue) %>
 <% end %>    
 
