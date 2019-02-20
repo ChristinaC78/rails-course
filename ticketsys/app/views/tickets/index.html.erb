@@ -1,0 +1,12 @@
+<%= link_to 'New Ticket', new_ticket_path %>
+
+<% @tickets.each do |ticket| %>
+        <div class="media mt-4">
+        <span class="border border-white">
+        <%= ticket.pcname %>
+        <%= ticket.name %>
+        <%= ticket.extension %>
+        <%= ticket.status %>
+        </span>
+        </div>
+    <% end %>

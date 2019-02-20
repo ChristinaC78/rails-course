@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-8">
+        <h2>Systems</h2>
+        <% @issues.each do |issue| %>
+            <div class="media mt-4">
+                <span class="border border-dark">
+                <%= image_tag issue.picture, height: 100, width: 100, class: 'mr-3' %>
+                </span>
+                <div class="media-body">
+                    <h5 class="mt-0">
+                        <%= issue.name %>
+                        <%= link_to 'Add', add_ticket_path(@ticket, issue_id: issue.id), method: :post, class: 'btn btn-primary btn-sm' %>
+                    </h5>
+                    <%= issue.description %>
+                </div>
+            </div>
+        <% end %>
+</div>
+<div class="col-4">
+          <h2>Current Ticket</h2>
+          <% @ticket.ticket_issues.each do |ticket_issue| %>
+                 <div class="media mt-4">
+                     <span class="border border-dark">
+                    <%= image_tag ticket_issue.issue.picture, height: 50, width: 50, class: 'mr-3' %>
+                    </span>
+                    <div class="media-body">
+                        <h5>
+                            <%= ticket_issue.issue.name %>
+                            <%= link_to 'Remove', remove_ticket_path(@ticket, ticket_issue_id: ticket_issue.id), method: :delete, class: 'btn btn-danger btn-sm' %>
+                        </h5>
+                    </div>
+                    
+                  </div>
+                <% end %> 
+                <%= link_to 'Submit', submit_ticket_path(@ticket), method: :put, class: 'btn btn-success' %>
+            </div>
+    </div>

@@ -1,0 +1,15 @@
+<% if current_user.superadmin_role? || current_user.supervisor_role? %>
+	<p>Visible only for superadmins and supervisors! </p>
+<% end %>
+
+<%= form_for @issue do |f| %>
+<div>
+    <%= f.text_field :name, placeholder: 'Affected System' %>
+</div>
+<div>
+    <%= f.text_area :description, placeholder: 'Description'  %>
+</div>
+<%= f.text_field :picture, placeholder: 'Picture'  %>
+<%= f.submit 'Save' %>
+<% end %>
+
